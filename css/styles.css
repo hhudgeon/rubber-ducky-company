@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-family: "Fascinate Inline", sans-serif;
+  color: #000;
+  letter-spacing: .1rem;
+  padding: 3px 0 5px 0;
+  margin-top: 3px;
+}
+
+h4, h5 {
+  font-family: Poppins, sans-serif;
+  font-weight: 900;
+  letter-spacing: .1rem;
+  padding: 10px 0 5px 0;
+}
+
+.headline {
+  font-size: 3rem;
+}
+
+.subheadline {
+  font-size: 2.5rem;
+}
+
+h6 {
+  font-family: Poppins, sans-serif;
+  font-weight: 900;
+  font-size: .75rem;
+}
+
+.row {
+  margin-bottom: 5px;
+}
+
+nav ul a {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: .07rem;
+}
+
+.brand-logo {
+  font-family: "Fascinate Inline", sans-serif;
+  color: #fff;
+  letter-spacing: .1rem;
+}
+
+.hanging-duck {
+  width: 100%;
+  height: auto;
+}
+
+.btext {
+  font-family: "Fascinate Inline", sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+}
+
+p {
+  line-height: 2rem;
+  padding: 5px 0 2px 0;
+  font-size: 1.1rem;
+}
+
+.question {
+  font-weight: 700;
+}
+
+.answer {
+  padding-left: 2%;
+}
+
+.sidenav-trigger {
+  color: #ffeb3b;
+}
+
+#nav-mobile a{
+  font-weight: 900;
+}
+
+#index-banner .parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: 750px;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container .section {
+    width: 100%;
+  }
+
+.input-field {
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 8px;
+  background-color: #fcfbf4;
+}
+
+.icon {
+  margin: 10px 10px 10px 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.page-footer .footer-copyright {
+  min-height: 30px;
+  padding: 2px 0 2px 0;
+}
+
+/********** IMAGE GRID **********/
+.image01 {
+  background-image: url("../images/01duck.jpg");
+}
+
+.image02 {
+  background-image: url("../images/02duck.jpg");
+}
+
+.image03 {
+  background-image: url("../images/03duck.jpg");
+}
+
+.image04 {
+  background-image: url("../images/04duck.jpg");
+}
+
+.image05 {
+  background-image: url("../images/05duck.jpg");
+}
+
+.image06 {
+  background-image: url("../images/06duck.jpg");
+}
+
+.image07 {
+  background-image: url("../images/07duck.jpg");
+}
+
+.image08 {
+  background-image: url("../images/08duck.jpg");
+}
+
+  /******************* PHONE *******************/
+
+  #index-banner .section {
+    top: 0;
+  }
+
+nav .brand-logo {
+  font-size: .9rem;
+}
+
+.transparent_bg {
+  margin-top: 10%;
+  background: rgba(40, 32, 32, 0.5)
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+.parallax-container {
+  min-height: 380px;
+  height: 350px;
+}
+
+h4, h5 {
+  margin-top: 15px;
+}
+
+.image-grid div {
+  width: 100%;
+  height: 240px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.image-grid {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+}
+/******************* PHONE 2*******************/
+@media only screen and (min-width: 499px) {
+  nav .brand-logo {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+}
+
+/******************* TABLET *******************/
+@media only screen and (min-width: 601px) {
+
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+
+  .transparent_bg {
+    margin-top: 22%;
+    background: rgba(40, 32, 32, 0.5)
+  }
+
+  .parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: 500px;
+    color: rgba(255,255,255,.9);
+  }
+
+  #index-banner .section {
+    top: 10%;
+  }
+
+  nav .brand-logo {
+    font-size: 1.5rem;
+  }
+
+  h4, h5 {
+    margin-top: 10px;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+
+  .image-grid div {
+    width: 25%;
+    height: 240px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .image-grid {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/******************* DESKTOP *******************/
+@media only screen and (min-width : 992px) {
+
+  nav .brand-logo {
+    font-size: 1.5rem;
+  }
+  .parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: 700px;
+    color: rgba(255,255,255,.9);
+  }
+
+  h4, h5 {
+    margin-top: 3px;
+  }
+
+  h4 {
+    font-size: 2.28rem;
+  }
+}
+
+/******************* DESKTOP 2 *******************/
+@media only screen and (min-width : 1261px) {
+
+  nav .brand-logo {
+    font-size: 2.2rem;
+  }
+}
