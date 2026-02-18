@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/********** GLOBAL / TYPE **********/
 body {
   font-family: Poppins, sans-serif;
   font-weight: 400;
@@ -19,14 +20,7 @@ h4, h5 {
   font-weight: 900;
   letter-spacing: .1rem;
   padding: 10px 0 5px 0;
-}
-
-.headline {
-  font-size: 3rem;
-}
-
-.subheadline {
-  font-size: 2.5rem;
+  margin-top: 15px; /* mobile-first default */
 }
 
 h6 {
@@ -35,10 +29,24 @@ h6 {
   font-size: .75rem;
 }
 
+p {
+  line-height: 2rem;
+  padding: 5px 0 2px 0;
+  font-size: 1.1rem;
+}
+
+.headline { font-size: 3rem; }
+.subheadline { font-size: 2.5rem; }
+
+.question { font-weight: 700; }
+.answer { padding-left: 2%; }
+
+/* Materialize grid tweak (optional - remove if it causes issues) */
 .row {
   margin-bottom: 5px;
 }
 
+/********** NAVBAR **********/
 nav ul a {
   color: #fff;
   font-weight: 900;
@@ -46,57 +54,70 @@ nav ul a {
   letter-spacing: .07rem;
 }
 
+/* Brand styling */
 .brand-logo {
   font-family: "Fascinate Inline", sans-serif;
   color: #fff;
   letter-spacing: .1rem;
 }
 
-.hanging-duck {
-  width: 100%;
-  height: auto;
-}
-
-.btext {
-  font-family: "Fascinate Inline", sans-serif;
-  font-weight: 900;
+/* Brand sizing (mobile-first) */
+nav .brand-logo {
   font-size: 1.2rem;
-  letter-spacing: .1rem;
+  white-space: nowrap;
 }
 
-p {
-  line-height: 2rem;
-  padding: 5px 0 2px 0;
-  font-size: 1.1rem;
-}
-
-.question {
-  font-weight: 700;
-}
-
-.answer {
-  padding-left: 2%;
-}
-
+/* Hamburger icon color */
 .sidenav-trigger {
   color: #ffeb3b;
 }
 
-#nav-mobile a{
+/* Mobile sidenav link weight */
+#nav-mobile a {
   font-weight: 900;
 }
 
-#index-banner .parallax-container {
+/********** NAVBAR OVERLAP FIX (MOBILE/TABLET ONLY) **********/
+/* This is the key: the hamburger exists at <= 992px, so constrain the logo there */
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    max-width: calc(100% - 56px); /* reserve space for menu icon */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block; /* helps ellipsis behave reliably */
+  }
+
+  /* Optional: reduce letter spacing on small screens to save width */
+  .brand-logo {
+    letter-spacing: .05rem;
+  }
+}
+
+/********** HERO / PARALLAX **********/
+/* Keep this generic so it doesn't fight itself */
+.parallax-container {
   min-height: 380px;
   line-height: 0;
-  height: 750px;
+  height: 350px; /* mobile-first */
   color: rgba(255,255,255,.9);
 }
 
 .parallax-container .section {
-    width: 100%;
-  }
+  width: 100%;
+}
 
+/* If you need this for index banner positioning */
+#index-banner .section {
+  top: 0;
+}
+
+/* Transparent overlay box */
+.transparent_bg {
+  margin-top: 10%;
+  background: rgba(40, 32, 32, 0.5);
+}
+
+/********** FORMS / INPUTS **********/
 .input-field {
   padding: 5px;
   border-radius: 5px;
@@ -104,63 +125,7 @@ p {
   background-color: #fcfbf4;
 }
 
-.icon {
-  margin: 10px 10px 10px 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.page-footer .footer-copyright {
-  min-height: 30px;
-  padding: 2px 0 2px 0;
-}
-
-/********** IMAGE GRID **********/
-.image01 {
-  background-image: url("../images/01duck.jpg");
-}
-
-.image02 {
-  background-image: url("../images/02duck.jpg");
-}
-
-.image03 {
-  background-image: url("../images/03duck.jpg");
-}
-
-.image04 {
-  background-image: url("../images/04duck.jpg");
-}
-
-.image05 {
-  background-image: url("../images/05duck.jpg");
-}
-
-.image06 {
-  background-image: url("../images/06duck.jpg");
-}
-
-.image07 {
-  background-image: url("../images/07duck.jpg");
-}
-
-.image08 {
-  background-image: url("../images/08duck.jpg");
-}
-
-  /******************* PHONE *******************/
-
-  #index-banner .section {
-    top: 0;
-  }
-
-nav .brand-logo {
-  font-size: .9rem;
-}
-
-.transparent_bg {
-  margin-top: 10%;
-  background: rgba(40, 32, 32, 0.5)
-}
-
+/********** ICONS / BLOCKS **********/
 .icon-block {
   padding: 0 15px;
 }
@@ -169,13 +134,38 @@ nav .brand-logo {
   font-size: inherit;
 }
 
-.parallax-container {
-  min-height: 380px;
-  height: 350px;
+.icon {
+  margin: 10px 10px 10px 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h4, h5 {
-  margin-top: 15px;
+/********** FOOTER **********/
+.page-footer .footer-copyright {
+  min-height: 30px;
+  padding: 2px 0 2px 0;
+}
+
+/********** IMAGES **********/
+.hanging-duck {
+  width: 100%;
+  height: auto;
+}
+
+/********** IMAGE GRID **********/
+.image01 { background-image: url("../images/01duck.jpg"); }
+.image02 { background-image: url("../images/02duck.jpg"); }
+.image03 { background-image: url("../images/03duck.jpg"); }
+.image04 { background-image: url("../images/04duck.jpg"); }
+.image05 { background-image: url("../images/05duck.jpg"); }
+.image06 { background-image: url("../images/06duck.jpg"); }
+.image07 { background-image: url("../images/07duck.jpg"); }
+.image08 { background-image: url("../images/08duck.jpg"); }
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* mobile-first */
 }
 
 .image-grid div {
@@ -185,23 +175,7 @@ h4, h5 {
   background-position: center center;
 }
 
-.image-grid {
-  flex-direction: column;
-  display: flex;
-  flex-wrap: wrap;
-}
-/******************* PHONE 2*******************/
-@media only screen and (min-width: 499px) {
-  nav .brand-logo {
-    font-size: 1.4rem;
-  }
-
-  h4 {
-    font-size: 1.75rem;
-  }
-}
-
-/******************* TABLET *******************/
+/********** TABLET (601px+) **********/
 @media only screen and (min-width: 601px) {
 
   .parallax-container .section {
@@ -211,14 +185,10 @@ h4, h5 {
 
   .transparent_bg {
     margin-top: 22%;
-    background: rgba(40, 32, 32, 0.5)
   }
 
   .parallax-container {
-    min-height: 380px;
-    line-height: 0;
     height: 500px;
-    color: rgba(255,255,255,.9);
   }
 
   #index-banner .section {
@@ -237,32 +207,34 @@ h4, h5 {
     font-size: 2rem;
   }
 
-  .image-grid div {
-    width: 25%;
-    height: 240px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-
   .image-grid {
     flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
+  }
+
+  .image-grid div {
+    width: 25%;
+    background-size: cover;
   }
 }
 
-/******************* DESKTOP *******************/
-@media only screen and (min-width : 992px) {
+/********** DESKTOP (993px+) **********/
+@media only screen and (min-width: 993px) {
 
+  /* On desktop the hamburger isn't used (menu shows), so remove truncation/constraints */
   nav .brand-logo {
-    font-size: 1.5rem;
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
+    display: inline;
   }
+
+  /* Restore full logo spacing on desktop if you want */
+  .brand-logo {
+    letter-spacing: .1rem;
+  }
+
   .parallax-container {
-    min-height: 380px;
-    line-height: 0;
     height: 700px;
-    color: rgba(255,255,255,.9);
   }
 
   h4, h5 {
@@ -274,10 +246,32 @@ h4, h5 {
   }
 }
 
-/******************* DESKTOP 2 *******************/
-@media only screen and (min-width : 1261px) {
+/********** NAVBAR: MID-DESKTOP SQUEEZE (prevents overlap) **********/
+@media only screen and (max-width: 1068px) and (min-width: 993px) {
 
+  /* Make links a touch smaller */
+  nav ul a {
+    font-size: 1.05rem;
+    letter-spacing: .04rem;
+  }
+
+  /* Shrink the Ducks button*/
+  nav ul .btn-large {
+    height: 44px;
+    line-height: 44px;
+    padding: 0 12px;
+    font-size: 1.05rem;
+  }
+
+  /* Reduce logo spacing slightly to save width */
   nav .brand-logo {
-    font-size: 2.2rem;
+    letter-spacing: .06rem;
+  }
+}
+
+/********** DESKTOP 2 (1201px+) **********/
+@media only screen and (min-width: 1201px) {
+  nav .brand-logo {
+    font-size: 2rem;
   }
 }
